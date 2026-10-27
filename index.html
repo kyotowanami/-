@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f4eb">
+    <title>ことばペット | ことばで育つ小さな相棒</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="masthead">
+            <a class="brand" href="#top" aria-label="ことばペット ホーム">
+                <span class="brand-mark" aria-hidden="true">こ</span>
+                <span>ことばペット</span>
+            </a>
+            <div class="header-tools">
+                <span class="save-status" id="saveStatus" role="status">この端末に保存</span>
+                <button class="reset-button" id="resetButton" type="button">最初から</button>
+            </div>
+        </header>
+
+        <main id="top">
+            <section class="play-area" aria-label="ことばペットの育成画面">
+                <div class="pet-column">
+                    <div class="pet-scene">
+                        <div class="scene-heading">
+                            <p class="eyebrow">YOUR LITTLE WORD CREATURE</p>
+                            <span class="alive-label"><span></span> すくすく育ち中</span>
+                        </div>
+
+                        <svg id="creature" viewBox="0 0 360 360" role="img" aria-label="ことばで性格が変わる生き物">
+                            <g class="scene-stars" aria-hidden="true">
+                                <path d="M66 103l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" />
+                                <path d="M292 118l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" />
+                                <circle cx="88" cy="166" r="3" />
+                                <circle cx="275" cy="174" r="3" />
+                            </g>
+                            <ellipse class="creature-shadow" cx="180" cy="304" rx="88" ry="17" />
+                            <path class="creature-ear" d="M113 119c-37-61-8-83 26-35l21 39z" />
+                            <path class="creature-ear" d="M247 119c37-61 8-83-26-35l-21 39z" />
+                            <circle class="creature-body" id="creatureBody" cx="180" cy="194" r="105" />
+                            <g class="trait-decoration trait-decoration-strong" aria-hidden="true">
+                                <path d="M99 117l-20-24 34 8zM261 117l20-24-34 8z" />
+                                <path class="strong-brow" d="M126 163l28 8M234 171l-28-8" />
+                            </g>
+                            <g class="trait-decoration trait-decoration-kind" aria-hidden="true">
+                                <path d="M180 63c-13-17-31 2-13 13-18 11 0 30 13 13 13 17 31-2 13-13 18-11 0-30-13-13z" />
+                                <circle cx="180" cy="76" r="5" />
+                            </g>
+                            <g class="trait-decoration trait-decoration-calm" aria-hidden="true">
+                                <path d="M270 78a25 25 0 1 1-30-31 21 21 0 0 0 30 31z" />
+                                <path d="M95 79l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" />
+                            </g>
+                            <ellipse class="cheek" cx="122" cy="215" rx="13" ry="8" />
+                            <ellipse class="cheek" cx="238" cy="215" rx="13" ry="8" />
+                            <g class="eyes">
+                                <ellipse cx="145" cy="181" rx="8" ry="12" />
+                                <ellipse cx="215" cy="181" rx="8" ry="12" />
+                                <circle class="eye-glint" cx="148" cy="177" r="2.5" />
+                                <circle class="eye-glint" cx="218" cy="177" r="2.5" />
+                            </g>
+                            <path class="creature-mouth" d="M164 220q16 18 32 0" />
+                        </svg>
+
+                        <div class="pet-speech">
+                            <span class="speech-mark" aria-hidden="true">“</span>
+                            <p id="message" aria-live="polite">どんな言葉が好きかな？</p>
+                        </div>
+                        <div class="scene-ground" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="pet-identity">
+                        <div>
+                            <p class="eyebrow">いまのなまえ</p>
+                            <h2 id="petName">ことばのこ</h2>
+                            <p class="personality-label" id="personalityLabel">まだ知らないことばだらけ</p>
+                        </div>
+                        <form class="name-form" id="nameForm">
+                            <label class="visually-hidden" for="nameInput">ペットの名前</label>
+                            <input id="nameInput" type="text" maxlength="12" placeholder="なまえをつける">
+                            <button type="submit" id="nameButton">決定</button>
+                        </form>
+                    </div>
+
+                    <div class="growth-row">
+                        <div class="level-badge"><span>LV</span><strong id="levelValue">1</strong></div>
+                        <div class="growth-track">
+                            <div class="growth-copy"><span>ことばの成長</span><span id="growthText">あと3こでレベルアップ</span></div>
+                            <div class="meter"><span id="growthMeter"></span></div>
+                        </div>
+                    </div>
+
+                    <section class="personality-section" aria-labelledby="personalityHeading">
+                        <div class="section-heading compact-heading">
+                            <h3 id="personalityHeading">こころの色</h3>
+                            <span>ことばの積み重ね</span>
+                        </div>
+                        <ul class="trait-list">
+                            <li class="trait-row" data-trait="kindness">
+                                <span class="trait-dot"></span><span class="trait-name">やさしさ</span>
+                                <span class="trait-meter"><span id="kindnessMeter"></span></span>
+                                <strong id="kindnessValue">0</strong>
+                            </li>
+                            <li class="trait-row" data-trait="calm">
+                                <span class="trait-dot"></span><span class="trait-name">おだやか</span>
+                                <span class="trait-meter"><span id="calmMeter"></span></span>
+                                <strong id="calmValue">0</strong>
+                            </li>
+                            <li class="trait-row" data-trait="aggressive">
+                                <span class="trait-dot"></span><span class="trait-name">つよさ</span>
+                                <span class="trait-meter"><span id="aggressiveMeter"></span></span>
+                                <strong id="aggressiveValue">0</strong>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <section class="feeding-panel" aria-labelledby="feedingHeading">
+                    <p class="eyebrow">A WORD FOR TODAY</p>
+                    <h1 id="feedingHeading">ことばを<br>ひとつ、あげよう。</h1>
+                    <p class="feeding-intro">どんな気持ちも、この子のこころの色になる。</p>
+
+                    <form id="feedForm" class="feed-form">
+                        <label for="wordInput">あげたいことば</label>
+                        <div class="input-row">
+                            <input id="wordInput" type="text" maxlength="5" placeholder="たとえば、すき" autocomplete="off">
+                            <button id="giveButton" type="submit">あげる <span aria-hidden="true">→</span></button>
+                        </div>
+                        <div class="input-footer"><span>5文字まで</span><span id="characterCount">0 / 5</span></div>
+                    </form>
+
+                    <div class="word-suggestions">
+                        <p class="section-label">ことばのかけら</p>
+                        <div class="suggestion-list">
+                            <button type="button" data-word="ありがと">ありがと</button>
+                            <button type="button" data-word="ねむい">ねむい</button>
+                            <button type="button" data-word="だいすき">だいすき</button>
+                            <button type="button" data-word="ばか">ばか</button>
+                        </div>
+                    </div>
+
+                    <section class="history-section" aria-labelledby="historyHeading">
+                        <div class="section-heading">
+                            <div><p class="eyebrow">LITTLE BY LITTLE</p><h2 id="historyHeading">ことばの記録</h2></div>
+                            <span class="history-count" id="historyCount">0</span>
+                        </div>
+                        <p class="empty-history" id="emptyHistory">ここに、ふたりの記録が増えていく。</p>
+                        <ol class="history-list" id="historyList" aria-live="polite"></ol>
+                    </section>
+                </section>
+            </section>
+        </main>
+        <footer class="page-footer"><span>ことばペット</span><span>きょうのことばが、あしたのこころ。</span></footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
