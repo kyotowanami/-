@@ -37,9 +37,48 @@
                                 <circle cx="275" cy="174" r="3" />
                             </g>
                             <ellipse class="creature-shadow" cx="180" cy="304" rx="88" ry="17" />
-                            <path class="creature-ear" d="M113 119c-37-61-8-83 26-35l21 39z" />
-                            <path class="creature-ear" d="M247 119c37-61 8-83-26-35l-21 39z" />
-                            <circle class="creature-body" id="creatureBody" cx="180" cy="194" r="105" />
+                            <path class="creature-tail" d="M245 243c52 1 77 30 55 48-17 14-35-2-45-18-10-15-23-18-35-17z" />
+                            <g class="creature-part creature-part-tuft" aria-hidden="true">
+                                <path class="creature-ear" d="M113 119c-37-61-8-83 26-35l21 39z" />
+                                <path class="creature-ear" d="M247 119c37-61 8-83-26-35l-21 39z" />
+                            </g>
+                            <g class="creature-part creature-part-leaf" aria-hidden="true">
+                                <path class="creature-ear" d="M118 127c-12-52 8-65 30-28 13 22 17 42 17 42z" />
+                                <path class="creature-ear" d="M242 127c12-52-8-65-30-28-13 22-17 42-17 42z" />
+                            </g>
+                            <g class="creature-part creature-part-horn" aria-hidden="true">
+                                <path class="creature-ear" d="M130 119c-8-48 12-55 27-16l11 30z" />
+                                <path class="creature-ear" d="M230 119c8-48-12-55-27-16l-11 30z" />
+                                <path class="creature-ear" d="M159 103c-4-42 14-48 23-10l-2 23z" />
+                                <path class="creature-ear" d="M201 103c4-42-14-48-23-10l2 23z" />
+                            </g>
+                            <g class="creature-part creature-part-fin" aria-hidden="true">
+                                <path class="creature-ear" d="M94 158c-38-28-57-14-28 15 14 14 28 18 42 17z" />
+                                <path class="creature-ear" d="M266 158c38-28 57-14 28 15-14 14-28 18-42 17z" />
+                            </g>
+                            <g class="creature-part creature-part-floppy" aria-hidden="true">
+                                <path class="creature-ear" d="M118 131c-44-44-61-22-32 19 14 19 28 27 42 25z" />
+                                <path class="creature-ear" d="M242 131c44-44 61-22 32 19-14 19-28 27-42 25z" />
+                            </g>
+                            <g class="creature-part creature-part-antenna" aria-hidden="true">
+                                <path d="M145 104c-9-33-23-35-29-49M215 104c9-33 23-35 29-49" />
+                                <circle cx="115" cy="53" r="9" />
+                                <circle cx="245" cy="53" r="9" />
+                            </g>
+                            <circle class="creature-body creature-body-round" id="creatureBody" cx="180" cy="194" r="105" />
+                            <ellipse class="creature-body creature-body-reptile" cx="180" cy="194" rx="108" ry="86" />
+                            <g class="creature-scales" aria-hidden="true">
+                                <path d="M131 142l8 9 8-9M166 128l8 9 8-9M201 128l8 9 8-9M236 142l8 9 8-9" />
+                                <circle cx="110" cy="190" r="4" />
+                                <circle cx="250" cy="190" r="4" />
+                            </g>
+                            <g class="creature-marking marking-spots" aria-hidden="true">
+                                <circle cx="116" cy="193" r="5" /><circle cx="128" cy="202" r="3" />
+                                <circle cx="244" cy="193" r="5" /><circle cx="232" cy="202" r="3" />
+                            </g>
+                            <g class="creature-marking marking-stripes" aria-hidden="true">
+                                <path d="M95 171q18 9 28 1M93 184q18 9 29 1M265 171q-18 9-28 1M267 184q-18 9-29 1" />
+                            </g>
                             <g class="trait-decoration trait-decoration-strong" aria-hidden="true">
                                 <path d="M99 117l-20-24 34 8zM261 117l20-24-34 8z" />
                                 <path class="strong-brow" d="M126 163l28 8M234 171l-28-8" />
@@ -54,11 +93,18 @@
                             </g>
                             <ellipse class="cheek" cx="122" cy="215" rx="13" ry="8" />
                             <ellipse class="cheek" cx="238" cy="215" rx="13" ry="8" />
-                            <g class="eyes">
+                            <g class="eyes eyes-round">
                                 <ellipse cx="145" cy="181" rx="8" ry="12" />
                                 <ellipse cx="215" cy="181" rx="8" ry="12" />
                                 <circle class="eye-glint" cx="148" cy="177" r="2.5" />
                                 <circle class="eye-glint" cx="218" cy="177" r="2.5" />
+                            </g>
+                            <g class="eyes eyes-sleepy">
+                                <path d="M132 183q13-13 26 0M202 183q13-13 26 0" />
+                                <circle cx="145" cy="184" r="4" /><circle cx="215" cy="184" r="4" />
+                            </g>
+                            <g class="eyes eyes-sparkle">
+                                <path d="M145 168l4 9 9 4-9 4-4 9-4-9-9-4 9-4zM215 168l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" />
                             </g>
                             <path class="creature-mouth" d="M164 220q16 18 32 0" />
                         </svg>
@@ -114,6 +160,19 @@
                             </li>
                         </ul>
                     </section>
+
+                    <section class="stat-section" aria-labelledby="statsHeading">
+                        <div class="section-heading compact-heading">
+                            <h3 id="statsHeading">たたかう力</h3>
+                            <span>ことばで成長</span>
+                        </div>
+                        <dl class="stat-list">
+                            <div><dt>攻撃力</dt><dd id="attackValue">10</dd></div>
+                            <div><dt>防御力</dt><dd id="defenseValue">5</dd></div>
+                            <div><dt>最大HP</dt><dd id="maxHpValue">60</dd></div>
+                            <div><dt>すばやさ</dt><dd id="speedValue">8</dd></div>
+                        </dl>
+                    </section>
                 </div>
 
                 <section class="feeding-panel" aria-labelledby="feedingHeading">
@@ -121,13 +180,18 @@
                     <h1 id="feedingHeading">ことばを<br>ひとつ、あげよう。</h1>
                     <p class="feeding-intro">どんな気持ちも、この子のこころの色になる。</p>
 
+                    <section class="battle-progress" aria-label="次のたいせんまで">
+                        <div class="battle-progress-copy"><span>10このことばで たいせん</span><strong id="battleProgressText">0 / 10</strong></div>
+                        <div class="battle-progress-track"><span id="battleProgressBar"></span></div>
+                    </section>
+
                     <form id="feedForm" class="feed-form">
                         <label for="wordInput">あげたいことば</label>
                         <div class="input-row">
-                            <input id="wordInput" type="text" maxlength="5" placeholder="たとえば、すき" autocomplete="off">
+                            <input id="wordInput" type="text" maxlength="6" placeholder="たとえば、だいすき" autocomplete="off">
                             <button id="giveButton" type="submit">あげる <span aria-hidden="true">→</span></button>
                         </div>
-                        <div class="input-footer"><span>5文字まで</span><span id="characterCount">0 / 5</span></div>
+                        <div class="input-footer"><span>6文字まで</span><span id="characterCount">0 / 6</span></div>
                     </form>
 
                     <div class="word-suggestions">
@@ -137,6 +201,9 @@
                             <button type="button" data-word="ねむい">ねむい</button>
                             <button type="button" data-word="だいすき">だいすき</button>
                             <button type="button" data-word="ばか">ばか</button>
+                            <button type="button" data-word="まもる">まもる</button>
+                            <button type="button" data-word="すばやい">すばやい</button>
+                            <button type="button" data-word="だいじょうぶ">だいじょうぶ</button>
                         </div>
                     </div>
 
@@ -153,6 +220,120 @@
         </main>
         <footer class="page-footer"><span>ことばペット</span><span>きょうのことばが、あしたのこころ。</span></footer>
     </div>
+
+    <section class="creation-overlay" id="creationOverlay" role="dialog" aria-modal="true" aria-labelledby="creationHeading" hidden>
+        <div class="creation-panel">
+            <p class="eyebrow">A CREATURE OF YOUR OWN</p>
+            <h2 id="creationHeading">さいしょの姿を<br>えらんでね。</h2>
+            <p class="creation-intro">ここで選んだ姿は、ことばを重ねるうちに少しずつ変わっていくよ。</p>
+            <form id="appearanceForm">
+                <fieldset class="choice-fieldset">
+                    <legend>からだのかたち</legend>
+                    <div class="appearance-options">
+                        <label class="appearance-card">
+                            <input type="radio" name="bodyType" value="round" checked>
+                            <span class="appearance-preview preview-round" aria-hidden="true"><i></i></span>
+                            <strong>まるっこ</strong><small>ふわふわのまるい子</small>
+                        </label>
+                        <label class="appearance-card">
+                            <input type="radio" name="bodyType" value="reptile">
+                            <span class="appearance-preview preview-reptile" aria-hidden="true"><i></i></span>
+                            <strong>ちびトカゲ</strong><small>しっぽと小さなうろこ</small>
+                        </label>
+                        <label class="appearance-card">
+                            <input type="radio" name="bodyType" value="horned">
+                            <span class="appearance-preview preview-horned" aria-hidden="true"><i></i></span>
+                            <strong>つのっこ</strong><small>ちいさな角がチャーム</small>
+                        </label>
+                    </div>
+                </fieldset>
+                <fieldset class="choice-fieldset color-fieldset">
+                    <legend>からだの色</legend>
+                    <div class="color-options">
+                        <label><input type="radio" name="color" value="#e8a7a5" checked><span style="--swatch:#e8a7a5" aria-label="さくら色"></span></label>
+                        <label><input type="radio" name="color" value="#86b79d"><span style="--swatch:#86b79d" aria-label="若葉色"></span></label>
+                        <label><input type="radio" name="color" value="#e9c46b"><span style="--swatch:#e9c46b" aria-label="たんぽぽ色"></span></label>
+                        <label><input type="radio" name="color" value="#84a9c5"><span style="--swatch:#84a9c5" aria-label="そら色"></span></label>
+                        <label><input type="radio" name="color" value="#ba9bca"><span style="--swatch:#ba9bca" aria-label="すみれ色"></span></label>
+                        <label><input type="radio" name="color" value="#e68c60"><span style="--swatch:#e68c60" aria-label="みかん色"></span></label>
+                    </div>
+                </fieldset>
+                <fieldset class="choice-fieldset">
+                    <legend>お耳・つの</legend>
+                    <div class="part-options">
+                        <label><input type="radio" name="part" value="tuft" checked><span>ぴん耳</span></label>
+                        <label><input type="radio" name="part" value="leaf"><span>はっぱ耳</span></label>
+                        <label><input type="radio" name="part" value="horn"><span>ちいさな角</span></label>
+                        <label><input type="radio" name="part" value="fin"><span>ひれ耳</span></label>
+                        <label><input type="radio" name="part" value="floppy"><span>たれ耳</span></label>
+                        <label><input type="radio" name="part" value="antenna"><span>触角</span></label>
+                    </div>
+                </fieldset>
+                <fieldset class="choice-fieldset">
+                    <legend>目のかたち</legend>
+                    <div class="part-options eye-options">
+                        <label><input type="radio" name="eyes" value="round" checked><span>まんまる</span></label>
+                        <label><input type="radio" name="eyes" value="sleepy"><span>ねむねむ</span></label>
+                        <label><input type="radio" name="eyes" value="sparkle"><span>きらきら</span></label>
+                    </div>
+                </fieldset>
+                <fieldset class="choice-fieldset">
+                    <legend>からだの模様</legend>
+                    <div class="part-options marking-options">
+                        <label><input type="radio" name="marking" value="none" checked><span>なし</span></label>
+                        <label><input type="radio" name="marking" value="spots"><span>つぶ模様</span></label>
+                        <label><input type="radio" name="marking" value="stripes"><span>しま模様</span></label>
+                    </div>
+                </fieldset>
+                <button class="create-button" type="submit">この姿で育てる <span aria-hidden="true">→</span></button>
+            </form>
+        </div>
+    </section>
+
+    <section class="battle-overlay" id="battleOverlay" role="dialog" aria-modal="true" aria-labelledby="battleHeading" hidden>
+        <div class="battle-panel">
+            <div class="battle-header">
+                <div><p class="eyebrow">RANDOM CPU MATCH</p><h2 id="battleHeading">ことばのたいせん</h2></div>
+                <span class="battle-round" id="battleRound">ROUND 1</span>
+            </div>
+            <div class="battle-stage">
+                <article class="battle-fighter" id="battlePlayerFighter">
+                    <div class="fighter-heading"><span>きみのペット</span><strong id="battlePlayerName">ことばのこ</strong></div>
+                    <div class="battle-health"><span id="battlePlayerHealth"></span></div>
+                    <p class="health-label" id="battlePlayerHealthText"></p>
+                    <div class="fighter-creature" id="battlePlayerCreature"><span class="dodge-effect" id="dodgeEffect" hidden>よけた！</span></div>
+                </article>
+                <div class="battle-versus" aria-hidden="true">VS</div>
+                <article class="battle-fighter cpu-fighter">
+                    <div class="fighter-heading"><span>CPU</span><strong id="battleCpuName">---</strong></div>
+                    <div class="battle-health cpu-health"><span id="battleCpuHealth"></span></div>
+                    <p class="health-label" id="battleCpuHealthText"></p>
+                    <div class="fighter-creature" id="battleCpuCreature"><span class="enemy-alert" id="enemyCue" role="status" aria-label="敵の攻撃方向" hidden>↓</span></div>
+                </article>
+            </div>
+            <p class="battle-log" id="battleLog" aria-live="polite"></p>
+            <div class="battle-controls" id="battleControls">
+                <div class="dodge-controls" id="dodgeControls" hidden>
+                    <span>相手の頭上の矢印と<br>同じ向きを押そう</span>
+                    <div class="arrow-pad">
+                        <button type="button" data-dodge="ArrowUp" aria-label="上によける">↑</button>
+                        <button type="button" data-dodge="ArrowLeft" aria-label="左によける">←</button>
+                        <button type="button" data-dodge="ArrowDown" aria-label="下によける">↓</button>
+                        <button type="button" data-dodge="ArrowRight" aria-label="右によける">→</button>
+                    </div>
+                </div>
+                <div class="combo-readout"><span>回避コンボ</span><strong id="comboValue">0</strong><div><span id="comboMeter"></span></div></div>
+                <div class="action-prompt">
+                    <strong id="battleCountdown">まもなく開始</strong>
+                    <button class="space-action" id="actionButton" type="button" hidden><kbd>SPACE</kbd> スペースで攻撃</button>
+                </div>
+            </div>
+            <div class="battle-result" id="battleResult" hidden>
+                <strong id="battleResultTitle"></strong>
+                <button type="button" id="continueButton">また10このことばを集める</button>
+            </div>
+        </div>
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
